@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de inscripción mejorado</title>
+    <meta
+      name="description"
+      content="Formulario web mejorado con validación nativa, mensajes de ayuda y ajustes de accesibilidad."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">Cumbre de Accesibilidad y UX</p>
+        <h1>Formulario de inscripción para participantes</h1>
+      </header>
+
+      <form class="registration-form" action="#" method="post" aria-describedby="form-help">
+        <p id="form-help" class="form-help">
+          Completa todos los campos requeridos para registrar tu participación. Este formulario incluye ayudas visuales y validación nativa para mejorar la experiencia del usuario.
+        </p>
+
+        <fieldset>
+          <legend>Datos personales</legend>
+
+          <div class="field">
+            <label for="nombre">Nombre completo</label>
+            <input
+              id="nombre"
+              name="nombre"
+              type="text"
+              autocomplete="name"
+              required
+              aria-describedby="nombre-help"
+              enterkeyhint="next"
+            />
+            <p id="nombre-help" class="helper-text">Escribe tu nombre completo tal como aparece en tu documento.</p>
+          </div>
+
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              aria-describedby="email-help"
+              enterkeyhint="next"
+            />
+            <p id="email-help" class="helper-text">Usa un correo válido para recibir confirmaciones del evento.</p>
+          </div>
+
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input
+              id="telefono"
+              name="telefono"
+              type="tel"
+              autocomplete="tel"
+              inputmode="tel"
+              required
+              aria-describedby="telefono-help"
+              enterkeyhint="next"
+            />
+            <p id="telefono-help" class="helper-text">Incluye tu código de área y un número de contacto.</p>
+          </div>
+
+          <div class="field">
+            <label for="sitio">Sitio web personal</label>
+            <input
+              id="sitio"
+              name="sitio"
+              type="url"
+              autocomplete="url"
+              placeholder="https://ejemplo.com"
+              required
+              aria-describedby="sitio-help"
+              enterkeyhint="next"
+            />
+            <p id="sitio-help" class="helper-text">Ejemplo: https://tu-sitio.com</p>
+          </div>
+
+          <div class="field">
+            <label for="password">Contraseña de acceso</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              minlength="8"
+              required
+              aria-describedby="password-help"
+              enterkeyhint="next"
+            />
+            <p id="password-help" class="helper-text">Usa al menos 8 caracteres para mayor seguridad.</p>
+          </div>
+
+          <div class="field">
+            <label for="confirmarPassword">Confirmar contraseña</label>
+            <input
+              id="confirmarPassword"
+              name="confirmarPassword"
+              type="password"
+              autocomplete="new-password"
+              minlength="8"
+              required
+              enterkeyhint="next"
+            />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Información profesional</legend>
+
+          <div class="field">
+            <label for="cargo">Cargo actual</label>
+            <input id="cargo" name="cargo" type="text" autocomplete="organization-title" required enterkeyhint="next" />
+          </div>
+
+          <div class="field">
+            <label for="empresa">Empresa u organización</label>
+            <input id="empresa" name="empresa" type="text" autocomplete="organization" required enterkeyhint="next" />
+          </div>
+
+          <div class="field">
+            <label for="busqueda">Tema o palabra clave de interés</label>
+            <input
+              id="busqueda"
+              name="busqueda"
+              type="search"
+              placeholder="Ej. accesibilidad, UX, HTML"
+              required
+              aria-describedby="busqueda-help"
+              enterkeyhint="next"
+            />
+            <p id="busqueda-help" class="helper-text">Escribe una palabra clave o temática principal.</p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Disponibilidad y preferencias</legend>
+
+          <div class="field">
+            <label for="fecha">Fecha de inscripción</label>
+            <input id="fecha" name="fecha" type="date" required />
+          </div>
+
+          <div class="field">
+            <label for="mes">Mes de preferencia</label>
+            <input id="mes" name="mes" type="month" required aria-describedby="mes-help" />
+            <p id="mes-help" class="helper-text">Selecciona el mes en el que prefieres participar.</p>
+          </div>
+
+          <div class="field">
+            <label for="semana">Semana de asistencia</label>
+            <input id="semana" name="semana" type="week" required aria-describedby="semana-help" />
+            <p id="semana-help" class="helper-text">Selecciona la semana estimada para tu asistencia.</p>
+          </div>
+
+          <div class="field">
+            <label for="hora">Hora preferida</label>
+            <input id="hora" name="hora" type="time" required aria-describedby="hora-help" />
+            <p id="hora-help" class="helper-text">Elige la franja horaria ideal para ti.</p>
+          </div>
+
+          <div class="field">
+            <label for="fechaHora">Fecha y hora estimada</label>
+            <input id="fechaHora" name="fechaHora" type="datetime-local" required aria-describedby="fechaHora-help" />
+            <p id="fechaHora-help" class="helper-text">Haz uso de este campo si deseas indicar fecha y horario concretos.</p>
+          </div>
+
+          <div class="field">
+            <label for="cantidad">Cantidad de asistentes</label>
+            <input id="cantidad" name="cantidad" type="number" min="1" max="20" step="1" required />
+          </div>
+
+          <div class="field">
+            <label for="temaColor">Color preferido para tu credencial</label>
+            <input id="temaColor" name="temaColor" type="color" value="#4f46e5" required aria-describedby="temaColor-help" />
+            <p id="temaColor-help" class="helper-text">Selecciona el color que te gustaría ver en tu credencial.</p>
+          </div>
+
+          <div class="field range-field">
+            <div class="range-header">
+              <label for="nivel">Nivel de experiencia</label>
+              <output class="range-value-box" id="nivel-valor" for="nivel">60</output>
+            </div>
+            <input id="nivel" name="nivel" type="range" min="0" max="100" step="10" value="60" required />
+            <div class="range-scale" aria-hidden="true">
+              <span>Principiante</span>
+              <span>Experto</span>
+            </div>
+            <p class="helper-text">Valor actual: <strong id="nivel-texto">60</strong>/100.</p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Selecciona tu perfil</legend>
+
+          <div class="field">
+            <label for="pais">País</label>
+            <select id="pais" name="pais" required aria-describedby="pais-help">
+              <option value="">Selecciona una opción</option>
+              <option value="argentina">Argentina</option>
+              <option value="bolivia">Bolivia</option>
+              <option value="chile">Chile</option>
+              <option value="colombia">Colombia</option>
+              <option value="mexico">México</option>
+              <option value="peru">Perú</option>
+              <option value="otros">Otro</option>
+            </select>
+            <p id="pais-help" class="helper-text">Selecciona el país desde donde participas.</p>
+          </div>
+
+          <div class="field">
+            <label for="modalidad">Modalidad de participación</label>
+            <select id="modalidad" name="modalidad" required aria-describedby="modalidad-help">
+              <option value="">Selecciona una modalidad</option>
+              <option value="presencial">Presencial</option>
+              <option value="virtual">Virtual</option>
+              <option value="hibrida">Híbrida</option>
+            </select>
+            <p id="modalidad-help" class="helper-text">Elige la modalidad que te gustaría usar en el evento.</p>
+          </div>
+
+          <div class="field">
+            <p id="tipo-label" class="group-label">Tipo de participante</p>
+            <div class="radio-group" role="radiogroup" aria-labelledby="tipo-label">
+              <label><input type="radio" name="tipo" value="estudiante" required /> Estudiante</label>
+              <label><input type="radio" name="tipo" value="profesional" checked required /> Profesional</label>
+              <label><input type="radio" name="tipo" value="emprendedor" required /> Emprendedor</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Intereses y documentos</legend>
+
+          <div class="field">
+            <label for="intereses">Intereses principales</label>
+            <textarea
+              id="intereses"
+              name="intereses"
+              rows="4"
+              maxlength="500"
+              placeholder="Describe tus principales áreas de interés..."
+              required
+              aria-describedby="intereses-help"
+            ></textarea>
+            <p id="intereses-help" class="helper-text">Menciona tus áreas principales de interés relacionado con el evento. Máximo 500 caracteres.</p>
+          </div>
+
+          <div class="field">
+            <label for="archivo">Adjunta tu CV</label>
+            <input id="archivo" name="archivo" type="file" accept=".pdf,.doc,.docx" required aria-describedby="archivo-help" />
+            <p id="archivo-help" class="helper-text">Formatos permitidos: PDF, DOC o DOCX.</p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Consentimientos</legend>
+
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="boletin" /> Quiero recibir información del evento por correo</label>
+            <label><input type="checkbox" name="acceso" required /> Acepto las condiciones de acceso y la política de privacidad</label>
+            <label><input type="checkbox" name="accesibilidad" /> Solicito adaptaciones de accesibilidad específicas</label>
+          </div>
+        </fieldset>
+
+        <div class="submit-wrap">
+          <button type="submit" class="submit-button">Enviar formulario</button>
+        </div>
+      </form>
+    </main>
+
+    <script>
+      const nivelInput = document.getElementById('nivel');
+      const nivelValor = document.getElementById('nivel-valor');
+      const nivelTexto = document.getElementById('nivel-texto');
+
+      const actualizarNivel = () => {
+        const valor = nivelInput.value;
+        nivelValor.textContent = valor;
+        nivelTexto.textContent = valor;
+      };
+
+      nivelInput.addEventListener('input', actualizarNivel);
+      actualizarNivel();
+    </script>
+  </body>
+</html>

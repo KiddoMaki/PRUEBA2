@@ -1,0 +1,245 @@
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --surface-alt: #eef4ff;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --border: #8aa0b6;
+  --brand: #1d4ed8;
+  --brand-strong: #163ea8;
+  --brand-soft: #dbeafe;
+  --accent: #0f766e;
+  --focus: #f59e0b;
+  --danger: #b91c1c;
+  --shadow: rgba(27, 39, 63, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #eef5ff 0%, #f6f7fb 100%);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.page-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--brand-strong);
+}
+
+h1 {
+  margin: 0.5rem auto 0;
+  max-width: 800px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.registration-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 18px 40px var(--shadow);
+  padding: 2rem;
+}
+
+.form-help {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-alt);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: 700;
+  color: var(--brand-strong);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.helper-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  border-radius: 12px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 46px;
+  border: 2px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  padding: 0.75rem 0.85rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-color: var(--brand-strong);
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.range-field {
+  gap: 0.75rem;
+}
+
+.range-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.range-value-box {
+  min-width: 54px;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: var(--brand-soft);
+  border: 1px solid var(--brand);
+  color: var(--brand-strong);
+  font-weight: 700;
+  text-align: center;
+}
+
+.range-scale {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.group-label {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.radio-group,
+.checkbox-group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.radio-group label,
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 500;
+}
+
+.radio-group input,
+.checkbox-group input {
+  width: 1.1rem;
+  min-height: 1.1rem;
+  accent-color: var(--brand);
+}
+
+.submit-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.submit-button {
+  min-width: min(100%, 280px);
+  min-height: 52px;
+  border: none;
+  border-radius: 14px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.85rem 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.28);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.submit-button:hover {
+  background: var(--brand-strong);
+}
+
+.submit-button:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 700px) {
+  .registration-form {
+    padding: 1rem;
+  }
+
+  .page-shell {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
