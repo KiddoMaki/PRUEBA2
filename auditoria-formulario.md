@@ -1,6 +1,6 @@
 # Auditoría de mejora del formulario HTML
 
-Fecha: 2026-09-11
+Fecha: 2026-09-08
 
 ## Alcance
 - Archivo revisado: `index.html`
